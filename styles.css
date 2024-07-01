@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(21, 21, 24);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4vw;
+}
+
+header h1 {
+    font-family: "Tiny5", sans-serif;
+    font-size: 15vh;
+    color: white;
+    text-shadow: 0px 0px 15px red;
+}
+
+#sizeBtn {
+    background-color: red;
+    border: 5px solid rgb(211, 0, 0);
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+    margin-left: 30px;
+    font-family: "Archivo Black", sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+#sizeBtn:hover {
+    background-color: rgb(211, 0, 0);
+    color: lightgray;
+    cursor: pointer;
+}
+
+#etchboard {
+    margin: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.pixelBlock {
+    background-color: #37373a;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 1px;
+}
+
+.hoveredPixel {
+    background-color: rgb(255, 25, 25);
+    box-shadow: 0px 0px 20px red;
+}
+
+.popUp {
+    width: 25%;
+    background-color: rgb(35, 35, 39);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.267);
+    border-radius: 20px;
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 15vw; left: 35vw;
+}
+
+.popUp h1 {
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: .18rem;
+    margin-bottom: .5vw;
+}
+
+.popUp input {
+    background-color: #37373a;
+    height: 35px;
+    width: 10vw;
+    border : none;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.384);
+    padding: 15px;
+    color: rgb(172, 172, 172);
+}
+
+.popUp button {
+    width: 10vw;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.267);
+    font-family: "Archivo Black", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+
+.popUp button:hover {
+    background-color: rgb(211, 0, 0);
+}
+
+.popUp #closeBtn {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    position: absolute;
+    top: .5vw; right: .5vw;
+    background-color: #37373a;
+    color: #59595e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 1vw; right: 1vw;
+    font-family: 'Courier New', Courier, monospace;
+    color: #59595e;
+    font-size: .5vw;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+footer a {
+    font-family: "Archivo Black", sans-serif;
+    text-decoration: none;
+    color: rgba(211, 0, 0, 0.548);
+}
