@@ -1,18 +1,14 @@
-const etchboard = document.querySelector('#etchboard');
-const body = document.querySelector('body');
-const changeBtn = document.querySelector('#sizeBtn');
+const etchBoard = document.querySelector('#etchBoard');
+const etchContainer = document.querySelector('#etchContainer');
+const resetBtn = document.querySelector('#resetBtn');
 
 function createGrid(numberAcross) {
-    for (row = 0; row < numberAcross; row++) {
-        let rowBlock = document.createElement('div');
-        rowBlock.classList.add('row');
-        etchboard.appendChild(rowBlock);
-
-        for (col = 0; col < numberAcross; col++) {
-            let pixelBlock = document.createElement('div');
-            pixelBlock.classList.add('pixelBlock');
-            rowBlock.appendChild(pixelBlock);
-        }
+    for (i = 0; i < numberAcross * numberAcross; i++) {
+        let pixelWidth = (100/numberAcross)-0.2;
+        let pixelBlock = document.createElement('div');
+        pixelBlock.classList.add('pixelBlock');
+        pixelBlock.style.flexBasis = `${pixelWidth}%`;
+        etchBoard.appendChild(pixelBlock);
     }
 
     const pixels = document.querySelectorAll('div.pixelBlock');
@@ -20,14 +16,19 @@ function createGrid(numberAcross) {
         pixel.addEventListener('mouseover', () => {
             pixel.classList.add('hoveredPixel');
         })
+        pixel.addEventListener('mousedown', event => {
+            if (event.button == 1) {
+                pixel.classList.remove('hoveredPixel');
+            }
+        })
     })
 }
 
-changeBtn.addEventListener('click', () => {
+function createPopUp() {
     let popUp = document.createElement('div');
     popUp.classList.add('popUp');
     let title = document.createElement('h1');
-    title.textContent = 'Choose the size of the grid';
+    title.textContent = 'Choose the size of your grid';
     popUp.appendChild(title);
     let closeBtn = document.createElement('button');
     closeBtn.setAttribute('id', 'closeBtn');
@@ -39,24 +40,35 @@ changeBtn.addEventListener('click', () => {
     let confirmBtn = document.createElement('button');
     confirmBtn.textContent = 'Create';
     popUp.appendChild(confirmBtn);
-
-    body.appendChild(popUp);
-
+    
+    etchContainer.appendChild(popUp);
+    
     confirmBtn.addEventListener('click', () => {
         const input = inputBox.value;
-
+    
         if (input > 0 && input <= 100) {
-            etchboard.innerHTML = "";
+            etchBoard.innerHTML = "";
+            
             createGrid(input);
             popUp.remove();
         } else {
-            alert (`That's not a valid number`);
+            alert (`Please enter a number between 0 and 100`);
         }
     })
-
+    
     closeBtn.addEventListener('click', () => {
         popUp.remove();
     })
+}
+
+resetBtn.addEventListener('click', () => {
+    createPopUp();
 })
 
 createGrid(25);
+
+// const eraserBtn = document.querySelector('eraser');
+// eraserBtn.addEventListener('click', () => {
+//     eraserBtn.style.backgroundColor = 'red';
+//     return true;
+// })

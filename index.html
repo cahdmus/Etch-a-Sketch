@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <script defer src="scripts.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 
-<header>
-    <h1>Etch-a-Sketch</h1> 
-    <button id="sizeBtn">Reset</button>
-</header>
-
 <body>
-    <div id="etchboard">
+    <div id="optionContainer" class="container">
+        <h1>Options</h1>
+        <div class="optionsContainer">
+            <h2>select brush mode</h2>
+            <div class="options tools">
+                <img src="images/fatBrush.png" id="rainbow" title="rainbow brush">
+                <img src="images/fatBrush.png" id="simple" title="single color brush">
+                <img src="images/fatBrush.png" id="oppacity" title="black gradient brush">
+            </div>
+        </div>
+        <div class="optionsContainer">
+            <h2>Other tools</h2>
+            <div class="options tools">
+                <img src="images/eraser.png" id="eraser" title="eraser brush">
+            </div>
+        </div>
+        <div class="optionsContainer">
+            <h2>Tips</h2>
+            <div class="options" id="tips">
+                <p>You can turn off a pixel by hovering it and clicking the mouse wheel.</p>
+            </div>
+        </div>
+    </div>
+    <div id="etchContainer" class="container">
+        <div id="title">
+            <h1>Etch-a-Sketch</h1>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div id="etchBoard">
 
+        </div>
     </div>
 </body>
 
 <footer>
     <p>Made by <a href="https://github.com/cahdmus/">cahdmus</a></p>
 </footer>
+
 </html>
