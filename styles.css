@@ -157,7 +157,8 @@ h1 {
 
 #resetBtn:hover {
     background-color: rgb(211, 0, 0);
-    color: lightgray;
+    color: rgb(226, 226, 226);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.267);
     cursor: pointer;
 }
 
