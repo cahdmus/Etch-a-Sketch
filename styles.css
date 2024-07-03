@@ -86,7 +86,7 @@ h1 {
     margin: 5px;
 }
 
-#rainbow, #simple, #oppacity {
+#rainbow, #monochromatic, #opacity {
     transform: rotate(45deg);
 }
 
@@ -96,11 +96,11 @@ h1 {
         linear-gradient(336deg, rgb(0, 217, 255), rgba(0,0,255,0) 70.71%);
 }
 
-#simple {
+#monochromatic {
     background: linear-gradient(45deg, rgba(255, 0, 0, 0.596) 0%, rgb(194, 2, 2) 100%);
 }
 
-#oppacity {
+#opacity {
     background: radial-gradient(ellipse at left bottom, #000 0%, #d6d6d6 100%);
 }
 
@@ -177,11 +177,22 @@ h1 {
     background-color: #37373a;
     border-radius: 100%;
     aspect-ratio: 1 / 1;
+    opacity: 1;
 }
 
-.hoveredPixel {
-    background-color: rgb(255, 25, 25);
-    box-shadow: 0px 0px 20px red;
+.rainbowPixel {
+    /* background-color: rgb(207, 179, 16);
+    box-shadow: 0px 0px 20px rgb(255, 217, 0); */
+}
+
+.monochromaticPixel {
+    /* background-color: rgb(255, 25, 25);
+    box-shadow: 0px 0px 20px red; */
+}
+
+.opacityPixel {
+    /* background-color: rgb(25, 173, 50);
+    box-shadow: 0px 0px 20px rgb(0, 255, 34); */
 }
 
 .popUp {
