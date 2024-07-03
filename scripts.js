@@ -49,8 +49,13 @@ function createGrid(numberAcross) {
                     pixel.style.backgroundColor = `white`;
                     pixel.style.boxShadow = `0px 0px 20px white`;
                     const pixelStyle = getComputedStyle(pixel);
-                    let currentOpacity = pixelStyle.opacity;
-                    pixel.style.opacity = currentOpacity - 0.1;
+                    let currentOpacity = parseFloat(pixelStyle.opacity);
+                    if (currentOpacity == 1) {
+                        currentOpacity = 0.1;
+                    } else if (currentOpacity < 1) {
+                        currentOpacity = currentOpacity + 0.1;
+                    }
+                    pixel.style.opacity = currentOpacity;
                     break;
                 default:
                     pixel.style.backgroundColor = `red`;
