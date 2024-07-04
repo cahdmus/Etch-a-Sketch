@@ -1,6 +1,7 @@
 const etchBoard = document.querySelector('#etchBoard');
 const etchContainer = document.querySelector('#etchContainer');
-const resetBtn = document.querySelector('#resetBtn');
+const resizeBtn = document.querySelector('#resizeBtn');
+const clearBtn = document.querySelector('#clearBoard');
 
 const colorPalette = ['#fd6f41', '#f7cf0b', '#7cc947', '#46b1f9', '#7f7df8'];
 
@@ -35,7 +36,7 @@ function createGrid(numberAcross) {
                     pixel.style.opacity = 1;
                     break;
                 case 'rainbow':
-                    let color = colorPalette[Math.floor(Math.random()*colorPalette.length)];
+                    let color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
                     pixel.style.backgroundColor = `${color}`;
                     pixel.style.boxShadow = `0px 0px 20px ${color}`;
                     pixel.style.opacity = 1;
@@ -60,7 +61,7 @@ function createGrid(numberAcross) {
                 default:
                     pixel.style.backgroundColor = `red`;
                     pixel.style.boxShadow = `0px 0px 20px red`;
-                    pixel.style.opacity = 1;                    
+                    pixel.style.opacity = 1;
             }
         })
         pixel.addEventListener('mousedown', event => {
@@ -70,12 +71,12 @@ function createGrid(numberAcross) {
                 pixel.style.opacity = 1;
             }
         })
-        // BrushesBtns.forEach(BrushBtn => {
-        //     BrushBtn.addEventListener('click', () => {
-        //         pixel.style.backgroundColor = `#37373a`;
-        //         pixel.style.boxShadow = `none`;
-        //     })
-        // })
+
+        clearBtn.addEventListener('click', () => {
+            pixel.style.backgroundColor = `#37373a`;
+            pixel.style.boxShadow = `none`;
+            pixel.style.opacity = 1;
+        })
     })
 }
 
@@ -116,7 +117,7 @@ function createPopUp() {
     })
 }
 
-resetBtn.addEventListener('click', () => {
+resizeBtn.addEventListener('click', () => {
     createPopUp();
 })
 
