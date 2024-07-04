@@ -107,6 +107,7 @@ function createPopUp() {
 
             createGrid(input);
             popUp.remove();
+            resizeBtn.disabled = false;
         } else {
             alert(`Please enter a number between 0 and 100`);
         }
@@ -114,11 +115,13 @@ function createPopUp() {
 
     closeBtn.addEventListener('click', () => {
         popUp.remove();
+        resizeBtn.disabled = false;
     })
 }
 
 resizeBtn.addEventListener('click', () => {
     createPopUp();
+    resizeBtn.disabled = true;
 })
 
 createGrid(25);
